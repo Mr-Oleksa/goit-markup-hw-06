@@ -11,7 +11,7 @@
   --address-link-color: rgba(255, 255, 255, 0.6);
   --background-team-color: #f5f4fa;
   --border-fon: #eeeeee;
-  --duration: 2500ms;
+  --duration: 250ms;
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -56,7 +56,9 @@ img {
   padding-right: 15px;
   margin: 0 auto;
 }
-.visually-hidden {
+.visually-hidden-checkbox {
+  left: 60px;
+  bottom: 120px;
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -650,7 +652,48 @@ body {
   border-radius: 50%;
   color: #ffffff;
 }
-
+.footer-subscription {
+  margin-left: auto;
+}
+.footer-form-input {
+  color: var(--white-color);
+  margin-top: 20px;
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background: transparent;
+}
+.footer-form-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+.footer-form-btn {
+  align-items: center;
+  display: inline-flex;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  padding: 10px 28px;
+  margin-left: 12px;
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.footer-form-icon {
+  margin-left: 10px;
+}
 /* ========== END FOOTER ========== */
 
 /* ========== MODAL WINDOW ========== */
@@ -697,6 +740,9 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+.modal-icon-close {
+  transition: fill var(--duration) var(--cubic);
+}
 .modal-close-btn:focus,
 .modal-close-btn:hover {
   outline: none;
@@ -704,9 +750,6 @@ body {
 .modal-close-btn:focus .modal-icon-close,
 .modal-close-btn:hover .modal-icon-close {
   fill: var(--accent-color);
-  /* transition-property: fill;
-  transition-duration: var(--duration);
-  transition-timing-function: var(--cubic); */
 }
 .modal-form {
   display: flex;
@@ -736,6 +779,7 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 42px;
+  transition: border var(--duration) var(--cubic);
 }
 .modal-form-input-wrapper {
   position: relative;
@@ -747,6 +791,7 @@ body {
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
+  transition: fill var(--duration) var(--cubic);
 }
 .modal-form-message::placeholder,
 .modal-form-input::placeholder {
@@ -770,6 +815,7 @@ body {
   border-radius: 4px;
   resize: none;
   padding: 12px 16px;
+  transition: border var(--duration) var(--cubic);
 }
 .modal-form-message:focus {
   border-color: var(--accent-color);
@@ -789,12 +835,15 @@ body {
   color: var(--white-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition: color var(--duration) var(--cubic) background-color var(--duration) var(--cubic)
+    box-shadow var(--duration) var(--cubic);
 }
 .modal-btn:hover,
 .modal-btn:focus {
-  background-color: var(--accent-color);
+  background-color: #188ce8;
   color: var(--white-color);
 }
+
 .modal-form-checkbox-policy {
   margin-top: 24px;
   text-align: center;
@@ -805,7 +854,6 @@ body {
 .modal-form-policy-link {
   color: var(--accent-color);
 }
-
 .modal-form-checkbox-policy::before {
   display: inline-block;
   vertical-align: middle;
@@ -815,12 +863,15 @@ body {
   height: 15px;
   background-image: url('../images/icon/vector.svg');
   cursor: pointer;
-}
-.modal-form-checkbox:checked + .modal-form-checkbox-policy::before {
-  background-image: url('../images/icon/icon-check.svg');
+  transition: box-shadow var(--duration) var(--cubic), background-image var(--duration) var(--cubic);
 }
 .modal-form-checkbox:focus + .modal-form-checkbox-policy::before {
   box-shadow: 0 0 0 2px blue;
   border-radius: 2px;
 }
+.modal-form-checkbox:checked + .modal-form-checkbox-policy::before {
+  background-image: url('../images/icon/icon-check.svg');
+  box-shadow: none;
+}
+
 /* ========== END MODAL WINDOW ========== */ ;
